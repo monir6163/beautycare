@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* tan sate table style */
+
+html,
+body {
+  scroll-behavior: smooth;
+  color: #475467;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* common classes */
+.text-primary {
+  color: rgba(255, 170, 165, 1);
+}
+.bg-primary {
+  background-color: rgba(255, 170, 165, 1);
+}
+.text-secondary {
+  color: rgba(168, 221, 230, 1);
+}
+.bg-secondary {
+  background-color: rgba(168, 221, 230, 1);
+}
+.text-black {
+  color: #475467;
+}
+.letterGap {
+  letter-spacing: -0.205px;
+}
+.text-cyan {
+  color: #67748e;
+}
+.text-shadow {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* gradients */
+/* gradients */
+.gradientText {
+  background: linear-gradient(269deg, #ffaaa5 27.81%, #a8dde6 62.01%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.gradientBg {
+  background: linear-gradient(248deg, #a8dde6 0.94%, #ffa5a5 100%);
+}
+.gradientBgReverse {
+  background: linear-gradient(248deg, #ffa5a5 0.94%, #a8dde6 100%);
+}
+
+/* responsive classes */
+.main-container {
+  @apply w-full mx-auto px-4 lg:px-2;
+}
+@media (min-width: 576px) {
+  .main-container {
+    max-width: 540px !important;
+  }
+}
+@media (min-width: 768px) {
+  .main-container {
+    max-width: 720px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dashboard-container {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: scroll;
+    width: 100% !important;
+  }
+  .dashboard-content {
+    width: 98% !important;
+    margin: 0 auto;
+  }
+  .new-quer-content {
+    width: 90% !important;
+  }
+  .blog-submit-btn {
+    width: 85% !important;
+    margin: 0 auto;
+    flex-direction: column !important;
+
+    /* column-gap: 11px !important; */
+    gap: 12px !important;
+  }
+  .padding-bottom {
+    padding: 6px !important;
+  }
+  .select-input {
+    width: 60% !important;
+  }
+  .dashboard-input {
+    width: 90% !important;
+  }
+}
+@media (min-width: 992px) {
+  .main-container {
+    max-width: 970px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .main-container {
+    max-width: 1170px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .main-container {
+    max-width: 1320px !important;
+  }
+}
+
+/* swiper js */
+.swiper-wrapper {
+  position: relative !important;
+  padding-bottom: 50px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-pagination-bullet {
+  margin: 0px 5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(255, 170, 165, 1) !important;
+  transform: scale(1.5) !important;
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-pagination {
+    position: absolute !important;
+    bottom: 70px !important;
+    left: 120px !important;
+  }
+}
+
+/* scroll to top */
+
+@font-face {
+  font-family: 'font-awesome';
+  src: url('../../public/assets/fonts/fa/fa-solid-900.ttf') format('truetype'),
+    url('../../public/assets/fonts/fa/fa-solid-900.woff2') format('woff2');
+}
+
+.scrollToTop {
+  position: relative;
+}
+.scrollToTop::after {
+  font-family: 'font-awesome';
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  color: rgba(255, 170, 165, 1);
+  display: block;
+  content: '\f062';
+  font-size: 24px;
+  z-index: 999;
+  cursor: pointer;
+  animation: toTop 2s linear 2s infinite backwards;
+}
+
+.scrollToDown {
+  position: fixed;
+}
+.scrollToDown::after {
+  font-family: 'font-awesome';
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  color: rgba(255, 170, 165, 1);
+  display: block;
+  content: '\f107';
+  font-size: 24px;
+  z-index: 999;
+  animation: toTop 2s linear 2s infinite backwards;
+}
+
+@keyframes toTop {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
